@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/cliente.module';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -9,11 +10,12 @@ import { Cliente } from '../models/cliente.module';
 })
 export class ClienteService {
 
-  //url da api
-  private url:string = 'http://localhost:8080/'
+    //url da api
+  private url:string = environment.apiUrl;
 
   constructor(private http: HttpClient) {
     console.log('HttpClient foi injetado:', this.http);
+    console.log('url: ', this.url);
   }
 
   //Get all clients
