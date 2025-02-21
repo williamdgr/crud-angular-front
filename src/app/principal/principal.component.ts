@@ -38,7 +38,7 @@ export class PrincipalComponent {
     this.servico.cadatrar(this.cliente)
     .subscribe(
       retorno => {
-        this.clientes.push(retorno);
+        this.selecionar()
         this.cliente = new Cliente();
         alert('Cliente cadastrado com sucesso!');
       }
